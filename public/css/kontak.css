@@ -1,0 +1,25 @@
+.card {
+    margin: 0 auto;
+    width: fit-content;
+    animation: slideUp 2s ease-in-out forwards;
+  }
+.card-header {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .card-header img {
+    margin: 0 auto; 
+    width: 75px; 
+  }
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%); 
+      opacity: 0; 
+    }
+    to {
+      transform: translateY(0); 
+      opacity: 1; 
+    }
+  }

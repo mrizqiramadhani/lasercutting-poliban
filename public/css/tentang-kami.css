@@ -1,0 +1,44 @@
+.banner {
+    padding-top: 150px;
+    padding-bottom: 300px;
+    background-image: url('/img/tentang-kami1.jpg');
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 300px;
+    position: relative;
+}
+
+.banner .heading {
+    animation: slideDown 1.5s ease-in-out forwards;
+}
+
+.banner .content {
+    animation: slideUp 1.5s ease-in-out forwards;
+    position: relative; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%); 
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%); 
+        opacity: 0; 
+    }
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+

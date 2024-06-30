@@ -35,9 +35,9 @@
                                         Order Placed</li>
                                     <li
                                         class="{{ in_array($trans->status_order, ['in_transit', 'delivered']) ? 'active' : '' }} step0">
-                                        In Transit</li>
+                                        On Progress</li>
                                     <li class="{{ $trans->status_order === 'delivered' ? 'active' : '' }} step0">
-                                        Delivered</li>
+                                        Finished</li>
                                 </ul>
                             </div>
                         </div>

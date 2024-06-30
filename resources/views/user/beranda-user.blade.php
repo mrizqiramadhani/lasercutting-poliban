@@ -1,6 +1,6 @@
 @extends('layouts.navbar-user')
 @extends('layouts.footer')
-@section('beranda-user-classes', 'active')
+@section('beranda-classes', 'active')
 @section('logout')
     {{-- @extends('admin.pesan') --}}
     {{-- @extends('user.tambah-transaksi') --}}
@@ -50,34 +50,36 @@
                 <div class="container marketing mt-5">
                     <div id="articles-container" class="row">
                         <div class="row">
-                            <h1 class="text-center mb-5">Selamat Datang User imuets</h1>
+                            <h1 class="text-start mb-5">Selamat Datang User imuets</h1>
                             <div class="row grid gap-5">
                                 @if ($products['status'] && count($products['data']) > 0)
                                     @foreach ($products['data']->items() as $item)
-                                    @if($item->deleted_at == null )
-                                        <div class="col-lg-3 col-md-4 col-sm-6 p-0">
-                                            <div class="card h-100 shadow-sm border-0"
-                                                style="transition: box-shadow 0.3s ease-in-out; ">
-                                                <img src="{{ !empty($item->photo) ? Storage::disk('public')->url($item->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
-                                                    class="card-img-top img-fluid" alt="{{ $item->name }}"
-                                                    style="height: 150px; object-fit: cover;">
-                                                <div class="card-body d-flex flex-column p-3">
-                                                    <h5 class="card-title">{{ $item->name }}</h5>
-                                                    <p class="card-text">Rp {{ number_format($item->price, 2, ',', '.') }}
-                                                    </p>
-                                                    <p class="card-text">{{ $item->description }}</p>
-                                                    <p class="card-text">{{ $item->stock }}</p>
-                                                    <div class="mt-auto">
-                                                        <button type="button" class="btn btn-warning btn-md add-to-cart"
-                                                            data-product-id="{{ $item->id }}">
-                                                            <i class="bi bi-cart-plus"></i> Add to Cart
-                                                        </button>
+                                        @if ($item->deleted_at == null)
+                                            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                                                <div class="card h-100 shadow-sm border-0"
+                                                    style="transition: box-shadow 0.3s ease-in-out; ">
+                                                    <img src="{{ !empty($item->photo) ? Storage::disk('public')->url($item->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
+                                                        class="card-img-top img-fluid" alt="{{ $item->name }}"
+                                                        style="height: 150px; object-fit: cover;">
+                                                    <div class="card-body d-flex flex-column p-3">
+                                                        <h5 class="card-title">{{ $item->name }}</h5>
+                                                        <p class="card-text">Rp
+                                                            {{ number_format($item->price, 2, ',', '.') }}
+                                                        </p>
+                                                        <p class="card-text">{{ $item->description }}</p>
+                                                        <p class="card-text">Stok: {{ $item->stock }}</p>
+                                                        <div class="mt-auto">
+                                                            <button type="button"
+                                                                class="btn btn-warning btn-md add-to-cart"
+                                                                data-product-id="{{ $item->id }}">
+                                                                <i class="bi bi-cart-plus"></i> Add to Cart
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endif
-                                        @endforeach
+                                    @endforeach
                                 @else
                                     <p>No products found.</p>
                                 @endif

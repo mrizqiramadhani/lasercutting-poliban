@@ -19,13 +19,13 @@
                             </option>
                             <option value="order_place" {{ $trans->status_order === 'order_place' ? 'selected' : '' }}>
                                 Order Placed</option>
-                            <option value="in_transit" {{ $trans->status_order === 'in_transit' ? 'selected' : '' }}>In
-                                Transit</option>
+                            <option value="in_transit" {{ $trans->status_order === 'in_transit' ? 'selected' : '' }}>On
+                                Progress</option>
+                            <option value="delivered" {{ $trans->status_order === 'delivered' ? 'selected' : '' }}>
+                                Finished</option>
                             <option value="out_of_delivery"
                                 {{ $trans->status_order === 'out_of_delivery' ? 'selected' : '' }}>Out for Delivery
                             </option>
-                            <option value="delivered" {{ $trans->status_order === 'delivered' ? 'selected' : '' }}>
-                                Delivered</option>
                         </select>
                     </div>
                 </div>
@@ -71,13 +71,15 @@
                             timer: 3000, // Close alert after 1 second
                             showConfirmButton: false
                         }).then(() => {
-                            window.location.reload(); // Refresh page after successful update
+                            window.location
+                                .reload(); // Refresh page after successful update
                         });
                     } else {
                         Swal.fire({
                             icon: 'error',
                             title: 'Error!',
-                            text: 'Failed to update transaction status: ' + response.message,
+                            text: 'Failed to update transaction status: ' + response
+                                .message,
                         });
                         submitButton.prop('disabled', false); // Re-enable the submit button
                     }

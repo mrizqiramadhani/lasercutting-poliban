@@ -50,6 +50,7 @@
         <div class="container" style="margin-top: 150px">
             <div class="container mt-3">
                 <div class="d-flex justify-content-between">
+                    <h1 class="text-start mb-5">Selamat Datang Admin lopyu</h1>
                     <div>
                         <button type="button" class="btn btn-primary btn-md" data-bs-toggle="modal"
                             data-bs-target="#tambahmodal"><span class="bi bi-plus-circle-fill"></span>&nbsp;Tambah
@@ -60,7 +61,7 @@
                 <div class="container marketing mt-5">
                     <div id="articles-container" class="row">
                         <div class="row">
-                            <h1 class="text-center mb-5">Selamat Datang User imuets</h1>
+
                             <div class="row grid gap-5">
                                 @if ($products['status'] && count($products['data']) > 0)
                                     @foreach ($products['data']->items() as $item)
@@ -75,7 +76,7 @@
                                                     <p class="card-text">Rp {{ number_format($item->price, 2, ',', '.') }}
                                                     </p>
                                                     <p class="card-text">{{ $item->description }}</p>
-                                                    <p class="card-text">{{ $item->stock }}</p>
+                                                    <p class="card-text">Stok: {{ $item->stock }}</p>
                                                     <div class="mt-auto">
                                                         <button type="button" class="btn btn-success btn-sm"
                                                             data-bs-toggle="modal"

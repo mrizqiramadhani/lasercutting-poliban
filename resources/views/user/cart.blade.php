@@ -1,6 +1,6 @@
 @extends('layouts.navbar-user')
 @extends('layouts.footer')
-@section('cart-user-classes', 'active')
+@section('cart-classes', 'active')
 @section('logout')
 
 
@@ -33,53 +33,70 @@
         <link rel="stylesheet" href="{{ asset('css/beranda.css') }}">
         <link rel="stylesheet" href="{{ asset('css/admin/beranda.css') }}">
 
-
-
     </head>
 
     <body>
         <div class="container" style="margin-top: 150px">
             <div class="container mt-3">
-
                 <div class="container marketing mt-5">
                     <div id="articles-container" class="row">
-                        <h1 class="text-center mb-5">Ini keranjang</h1>
-
-                        <div class="row grid gap-5">
+                        <h1 class="text-start mb-5">Keranjang User</h1>
+                        <div class="row justify-content-start gx-5">
                             @if ($cart['status'] && count($cart['data']) > 0)
-                            @foreach ($cart['data']->items() as $item)
-                            @if ($item->deleted_at == null )
-                                    <div class="col-lg-3 col-md-4 col-sm-6 p-0">
-                                        <div class="card h-100 shadow-sm border-0"
-                                            style="transition: box-shadow 0.3s ease-in-out; ">
-                                            <img src="{{ !empty($item->product->photo) ? Storage::disk('public')->url($item->product->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
-                                                class="card-img-top img-fluid" alt="{{ $item->product->name }}"
-                                                style="height: 150px; object-fit: cover;" />
-                                            <div class="card-body d-flex flex-column p-3">
-                                                <h5 class="card-title">{{ $item->product->name  }}</h5>
-                                                <p class="card-text">Rp
-                                                    {{ number_format($item->product->price, 2, ',', '.') }}
-                                                </p>
-                                                <p class="card-text">{{ $item->product->description }}</p>
-                                                <p class="card-text">{{ $item->product->stock }}</p>
-
-                                                <div class="mt-auto">
-                                                    <button type="button" class="btn btn-success btn-md"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#tambahtransaksimodal{{ $item->id }}">
-                                                        Buy
-                                                    </button>
-                                                    <button type="button" class="btn btn-danger btn-sm"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#hapusModal{{ $item->id }}">
-                                                        <i class="bi bi-trash"></i> Delete
-                                                    </button>
+                                @foreach ($cart['data']->items() as $item)
+                                    @if ($item->deleted_at == null)
+                                        <div class="col-12 mb-4">
+                                            <div class="card h-100">
+                                                <div class="row g-0 align-items-center">
+                                                    <!-- Image Column -->
+                                                    <div class="col-md-3">
+                                                        <img src="{{ !empty($item->product->photo) ? Storage::disk('public')->url($item->product->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
+                                                            class="img-fluid rounded-start" alt="{{ $item->product->name }}"
+                                                            style="object-fit: cover; width: 100%; height: 250px;">
+                                                    </div>
+                                                    <!-- Text Column -->
+                                                    <div class="col-md-9">
+                                                        <div
+                                                            class="card-body d-flex flex-column justify-content-between h-100">
+                                                            <div class="mb-3">
+                                                                <h5 class="card-title mb-1">{{ $item->product->name }}</h5>
+                                                                <p class="card-text text-muted">
+                                                                    {{ $item->product->description }}</p>
+                                                                <p class="card-text text-muted mb-2">Stok:
+                                                                    {{ $item->product->stock }}</p>
+                                                                <p class="card-text text-success fw-bold">Rp
+                                                                    {{ number_format($item->product->price, 2, ',', '.') }}
+                                                                </p>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center mt-auto">
+                                                                <!-- Add Transaction Button -->
+                                                                <button type="button" class="btn btn-success btn-md me-2"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#tambahtransaksimodal{{ $item->id }}">
+                                                                    Buy
+                                                                </button>
+                                                                <!-- Delete Button -->
+                                                                <button type="button" class="btn btn-outline-danger btn-md"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#hapusModal{{ $item->id }}">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                        viewBox="0 0 24 24" stroke-width="1.5"
+                                                                        stroke="currentColor"
+                                                                        style="width: 20px; height: 20px;">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                                            d="M6 18L18 6M6 6l12 12" />
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <!-- Include Modals for Add Transaction and Delete -->
+                                            @include('user.tambah-transaksi', ['item' => $item])
+                                            @include('user.hapus', ['item' => $item])
                                         </div>
-                                    </div>
-                                    @include('user.tambah-transaksi', ['item' => $item])
-                                    @include('user.hapus', ['item' => $item])
                                     @endif
                                 @endforeach
                             @else
@@ -87,6 +104,47 @@
                             @endif
                         </div>
 
+
+                        {{-- ccss --}}
+                        {{-- <div class="container">
+                                <h1 class="mb-5 text-center text-2xl font-bold">Cart Items</h1>
+                                <div class="row justify-content-center gx-5">
+                                    <div class="col-lg-8">
+                                        <div class="card mb-3">
+                                            <div class="row g-0">
+                                                <div class="col-md-4">
+                                                    <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                                        class="img-fluid rounded-start" alt="product-image">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body d-flex flex-column justify-content-between">
+                                                        <div>
+                                                            <h5 class="card-title">Nike Air Max 2019</h5>
+                                                            <p class="card-text text-muted">36EU - 4US</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center">
+
+                                                            <div class="d-flex align-items-center">
+                                                                <p class="mb-0 me-3">259.000 ₭</p>
+                                                                <button class="btn btn-outline-danger btn-sm">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                        viewBox="0 0 24 24" stroke-width="1.5"
+                                                                        stroke="currentColor"
+                                                                        style="width: 20px; height: 20px;">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                                            d="M6 18L18 6M6 6l12 12" />
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+                        {{-- sadsd --}}
 
                     </div>
                 </div>

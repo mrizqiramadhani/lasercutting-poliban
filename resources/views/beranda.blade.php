@@ -97,6 +97,50 @@
         .card:hover {
             box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.2) !important;
         }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .product-card .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .product-card .mt-auto {
+            margin-top: auto;
+        }
+
+        /* Media queries for responsive design */
+        @media (max-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 
     <div class="container marketing">
@@ -145,37 +189,33 @@
                 </div>
             </div> --}}
 
-            <div class="row grid gap-5">
-                @if ($products['status'] && count($products['data']) > 0)
-                    @foreach (array_slice($products['data']->items(), 0, 3) as $item)
-                        <div class="col-lg-4 col-md-4 col-sm-6 p-0">
-                            <div class="card h-100 shadow-sm border-0"
-                                style="transition: box-shadow 0.3s ease-in-out; ">
-                                <img src="{{ !empty($item->photo) ? Storage::disk('public')->url($item->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
-                                    class="card-img-top img-fluid" alt="{{ $item->name }}"
-                                    style="height: 150px; object-fit: cover;">
-                                <div class="card-body d-flex flex-column p-3">
-                                    <h5 class="card-title">{{ $item->name }}</h5>
-                                    <p class="card-text">Rp {{ number_format($item->price, 2, ',', '.') }}
-                                    </p>
-                                    <p class="card-text">{{ $item->description }}</p>
-                                    <div class="mt-auto">
-                                        <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal"
-                                            aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                            href="#">{{-- <button type="button" class="btn btn-warning btn-md add-to-cart"
-                                            data-product-id="{{ $item->id }}"> --}}
-                                            <i class="bi
-                                            bi-cart-plus"></i>
-                                            Buy Now
-                                        </button>
+            <div class="container">
+                <div class="row product-grid">
+                    @if ($products['status'] && count($products['data']) > 0)
+                        @foreach (array_slice($products['data']->items(), 0, 3) as $item)
+                            <div class="col p-0">
+                                <div class="card h-100 shadow-sm border-0 product-card">
+                                    <img src="{{ !empty($item->photo) ? Storage::disk('public')->url($item->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
+                                        class="card-img-top img-fluid" alt="{{ $item->name }}">
+                                    <div class="card-body d-flex flex-column p-3">
+                                        <h5 class="card-title">{{ $item->name }}</h5>
+                                        <p class="card-text">Rp {{ number_format($item->price, 2, ',', '.') }}</p>
+                                        <p class="card-text">{{ $item->description }}</p>
+                                        <p class="card-text">Stok: {{ $item->stock }}</p>
+                                        <div class="mt-auto">
+                                            <button type="button" class="btn btn-success btn-md"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <i class="bi bi-cart-plus"></i> Buy Now
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                @else
-                    <p>No products found.</p>
-                @endif
+                        @endforeach
+                    @else
+                        <p>No products found.</p>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

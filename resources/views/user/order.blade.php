@@ -43,7 +43,7 @@
                 <div class="container marketing mt-5">
                     <div id="transactions-container" class="row">
                         <div class="row">
-                            <h1 class="text-center mb-5">Selamat Datang User imuets</h1>
+                            <h1 class="text-start mb-3">Selamat Datang User imuets</h1>
                             @if ($transaction['status'] && count($transaction['data']) > 0)
                                 <ul class="list-group">
                                     @foreach ($transaction['data']->items() as $trans)

@@ -1,6 +1,7 @@
 @extends('layouts.navbar')
 @extends('layouts.footer')
 @extends('layouts.auth')
+@extends('layouts.contact')
 @section('beranda-classes', 'active')
 @section('login-logout', 'Login')
 
@@ -145,49 +146,11 @@
 
     <div class="container marketing">
 
-        <!-- Three columns of text below the carousel -->
+
         <div class="row">
             <div class="d-flex justify-content-center" style="margin-bottom: 70px">
                 <h1>Barang yang tersedia!</h1>
             </div>
-            {{-- <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                    <div class="card w-100 text-center">
-                        <img src="{{ asset('img/logo.jpg') }}" class="card-img-top mx-auto mt-3" alt="Barang 1"
-                            style="width: 150px;">
-                        <div class="card-body d-flex flex-column">
-                            <h2 class="card-title">Barang 1</h2>
-                            <p class="card-text">Some representative placeholder content for the three columns of text
-                                below the carousel. This is the first column.</p>
-                            <a href="#" class="btn btn-secondary mt-auto">View details &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                    <div class="card w-100 text-center">
-                        <img src="{{ asset('img/logo.jpg') }}" class="card-img-top mx-auto mt-3" alt="Barang 2"
-                            style="width: 150px;">
-                        <div class="card-body d-flex flex-column">
-                            <h2 class="card-title">Barang 2</h2>
-                            <p class="card-text">Another exciting bit of representative placeholder content. This time,
-                                we've moved on to the second column.</p>
-                            <a href="#" class="btn btn-secondary mt-auto">View details &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-                    <div class="card w-100 text-center">
-                        <img src="{{ asset('img/logo.jpg') }}" class="card-img-top mx-auto mt-3" alt="Barang 3"
-                            style="width: 150px;">
-                        <div class="card-body d-flex flex-column">
-                            <h2 class="card-title">Barang 3</h2>
-                            <p class="card-text">And lastly this, the third column of representative placeholder
-                                content.</p>
-                            <a href="#" class="btn btn-secondary mt-auto">View details &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
 
             <div class="container">
                 <div class="row product-grid">

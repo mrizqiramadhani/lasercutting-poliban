@@ -1,6 +1,7 @@
 @extends('layouts.navbar-user')
 @section('Kontak-classes', 'active')
 @section('login-logout', 'Login')
+@extends('layouts.contact')
 @extends('layouts.auth')
 @extends('layouts.footer')
 <!DOCTYPE html>

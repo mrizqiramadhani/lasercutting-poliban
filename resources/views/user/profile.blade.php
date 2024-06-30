@@ -1,4 +1,5 @@
 @extends('layouts.navbar-user')
+@extends('layouts.contact')
 @section('user-classes', 'active')
 @extends('layouts.footer')
 

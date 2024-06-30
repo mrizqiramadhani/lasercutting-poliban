@@ -1,5 +1,6 @@
 @extends('layouts.navbar-user')
 @extends('layouts.footer')
+@extends('layouts.contact')
 @extends('layouts.auth')
 @section('tentang-kami-classes', 'active')
 @section('login-logout', 'Login')

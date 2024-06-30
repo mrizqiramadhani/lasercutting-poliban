@@ -1,5 +1,6 @@
 @extends('layouts.navbar-user')
 @extends('layouts.footer')
+@extends('layouts.contact')
 @section('order-classes', 'active')
 @section('logout')
 
@@ -38,12 +39,12 @@
     </head>
 
     <body>
-        <div class="container" style="margin-top: 150px">
+        <div class="container" style="margin-top: 50px">
             <div class="container mt-3">
                 <div class="container marketing mt-5">
                     <div id="transactions-container" class="row">
                         <div class="row">
-                            <h1 class="text-start mb-3">Selamat Datang User imuets</h1>
+                            <h1 class="text-start mb-5 mt-5">Selamat Datang User imuets</h1>
                             @if ($transaction['status'] && count($transaction['data']) > 0)
                                 <ul class="list-group">
                                     @foreach ($transaction['data']->items() as $trans)

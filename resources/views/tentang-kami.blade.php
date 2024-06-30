@@ -1,6 +1,7 @@
 @extends('layouts.navbar')
 @extends('layouts.footer')
 @extends('layouts.auth')
+@extends('layouts.contact')
 @section('tentang-kami-classes', 'active')
 @section('login-logout', 'Login')
 <!DOCTYPE html>
@@ -30,7 +31,6 @@
     {{-- link rel css --}}
     <link rel="stylesheet" href="{{ asset('css/beranda.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tentang-kami.css') }}">
-
 </head>
 
 <body>

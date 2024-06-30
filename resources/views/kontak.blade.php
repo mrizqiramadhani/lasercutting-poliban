@@ -3,6 +3,8 @@
 @section('login-logout', 'Login')
 @extends('layouts.auth')
 @extends('layouts.footer')
+@extends('layouts.contact')
+
 <!DOCTYPE html>
 <html lang="en">
 

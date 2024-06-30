@@ -6,7 +6,7 @@
         width: 75px;
         height: 75px;
         z-index: 1000;
-        animation: pulse 2s infinite;
+        animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
@@ -25,7 +25,7 @@
 </style>
 
 {{-- wa logo --}}
-<a href="https://wa.me/+6285821759523" target="_blank">
+<a href="https://wa.me/+6281348669955" target="_blank">
     <img src="{{ asset('img/whatsapp.png') }}" class="wa-logo" alt="WhatsApp">
 </a>
 {{-- wa logo --}}

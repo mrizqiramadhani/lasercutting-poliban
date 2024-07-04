@@ -168,7 +168,7 @@
                                         <div class="mt-auto">
                                             <button type="button" class="btn btn-success btn-md"
                                                 data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                <i class="bi bi-cart-plus"></i> Buy Now
+                                                <i class="bi bi-cart-plus"></i> Beli Sekarang!
                                             </button>
                                         </div>
                                     </div>

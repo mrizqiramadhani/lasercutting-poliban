@@ -155,7 +155,7 @@
             <div class="container">
                 <div class="row product-grid">
                     @if ($products['status'] && count($products['data']) > 0)
-                        @foreach (array_slice($products['data']->items(), 0, 3) as $item)
+                        @foreach (array_slice($products['data']->items(), 0, 100) as $item)
                             <div class="col p-0">
                                 <div class="card h-100 shadow-sm border-0 product-card">
                                     <img src="{{ !empty($item->photo) ? Storage::disk('public')->url($item->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"

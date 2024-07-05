@@ -41,7 +41,7 @@
             <div class="container mt-3">
                 <div class="container marketing mt-5">
                     <div id="articles-container">
-                        <h1 class="text-start mb-5">Keranjang User</h1>
+                        <h1 class="text-start mb-5">Keranjang <span id="user-name-dropdown"></span></h1>
                         <div class="row justify-content-start gx-5">
                             @if ($cart['status'] && count($cart['data']) > 0)
                                 @foreach ($cart['data']->items() as $item)
@@ -252,5 +252,16 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userName = sessionStorage.getItem('user_name');
+            if (userName) {
+                document.getElementById('user-name-dropdown').innerText = userName;
+            } else {
+                console.log('User name not found in sessionStorage');
+                Swal.fire('Error', 'User name not found in sessionStorage', 'error');
+            }
+        });
+    </script>
 
     </html>

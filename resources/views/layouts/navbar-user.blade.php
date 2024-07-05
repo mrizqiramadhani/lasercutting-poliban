@@ -34,7 +34,7 @@
                 <li class="nav-item dropdown me-4">
                     <a class="nav-link dropdown-toggle btn btn-secondary @yield('user-classes')" href="#"
                         id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Profile
+                        <span id="user-name-dropdown"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="userDropdown">
                         <li> <a class="dropdown-item @yield('user-classes')" href="#"
@@ -98,4 +98,15 @@
         var url = "{{ route('show.transaction') }}?user_id=" + id;
         window.location.href = url;
     }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const userName = sessionStorage.getItem('user_name');
+        if (userName) {
+            document.getElementById('user-name-dropdown').innerText = userName;
+        } else {
+            console.log('User name not found in sessionStorage');
+            Swal.fire('Error', 'User name not found in sessionStorage', 'error');
+        }
+    });
 </script>

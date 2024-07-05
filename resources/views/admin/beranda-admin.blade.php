@@ -50,7 +50,7 @@
         <div class="container" style="margin-top: 150px">
             <div class="container mt-3">
                 <div class="d-flex justify-content-between">
-                    <h1 class="text-start mb-5">Selamat Datang Admin</h1>
+                    <h1 class="text-start mb-5">Selamat Datang Admin <span id="user-name-dropdown"></span></h1>
                     <div>
                         <button type="button" class="btn btn-primary btn-md" data-bs-toggle="modal"
                             data-bs-target="#tambahmodal"><span class="bi bi-plus-circle-fill"></span>&nbsp;Tambah
@@ -121,6 +121,17 @@
                 }
             });
         })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userName = sessionStorage.getItem('user_name');
+            if (userName) {
+                document.getElementById('user-name-dropdown').innerText = userName;
+            } else {
+                console.log('User name not found in sessionStorage');
+                Swal.fire('Error', 'User name not found in sessionStorage', 'error');
+            }
+        });
     </script>
 
     </html>

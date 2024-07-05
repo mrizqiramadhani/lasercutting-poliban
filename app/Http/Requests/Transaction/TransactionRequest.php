@@ -34,7 +34,7 @@ class TransactionRequest extends FormRequest
     public function store(): array
     {
         return [
-            'status_order' => 'required|in:waiting,order_place,in_transit,out_of_delivery,delivered|max:100',
+            'status_order' => 'required|in:waiting,order_place,on_progress,out_of_delivery,finished|max:100',
             'photo_receipt' => 'required|file|image',
             'cart.*.id' => 'required|exists:m_cart,id',
             'cart.*.stock' => 'required|numeric'
@@ -45,7 +45,7 @@ class TransactionRequest extends FormRequest
     {
         return [
             'id' => 'required|exists:m_transaction,id',
-            'status_order' => 'required|in:waiting,order_place,in_transit,out_of_delivery,delivered|max:100',
+            'status_order' => 'required|in:waiting,order_place,on_progress,out_of_delivery,finished|max:100',
         ];
     }
 

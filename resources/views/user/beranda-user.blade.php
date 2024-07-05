@@ -51,7 +51,7 @@
                 <div class="container marketing mt-5">
                     <div>
                         <div>
-                            <h1 class="text-start mb-5">Selamat Datang User imuets</h1>
+                            <h1 class="text-start mb-5">Selamat Datang <span id="user-name"></span></h1>
                             <div class="row grid gap-5">
                                 @if ($products['status'] && count($products['data']) > 0)
                                     @foreach ($products['data']->items() as $item)
@@ -104,7 +104,13 @@
                 button.addEventListener('click', function() {
                     const productId = this.getAttribute('data-product-id');
                     const userId = sessionStorage.getItem('user_id');
+                    const userName = sessionStorage.getItem('user_name');
 
+                    if (userName) {
+                        document.getElementById('user-name').innerText = userName;
+                    } else {
+                        Swal.fire('Error', 'User name not found in sessionStorage', 'error');
+                    }
                     console.log('Product ID:', productId);
                     console.log('User ID:', userId);
 
@@ -163,6 +169,29 @@
             });
         })
     </script>
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    'Authorization': 'Bearer ' + sessionStorage.getItem(
+                        'jwt_token')
+                }
+            });
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userName = sessionStorage.getItem('user_name');
+            if (userName) {
+                document.getElementById('user-name').innerText = userName;
+            } else {
+                console.log('User name not found in sessionStorage');
+                Swal.fire('Error', 'User name not found in sessionStorage', 'error');
+            }
 
+
+        });
+    </script>
 
     </html>

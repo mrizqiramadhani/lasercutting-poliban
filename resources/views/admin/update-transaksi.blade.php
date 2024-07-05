@@ -19,9 +19,10 @@
                             </option>
                             <option value="order_place" {{ $trans->status_order === 'order_place' ? 'selected' : '' }}>
                                 Order Placed</option>
-                            <option value="in_transit" {{ $trans->status_order === 'in_transit' ? 'selected' : '' }}>On
+                            <option value="on_progress" {{ $trans->status_order === 'on_progress' ? 'selected' : '' }}>
+                                On
                                 Progress</option>
-                            <option value="delivered" {{ $trans->status_order === 'delivered' ? 'selected' : '' }}>
+                            <option value="finished" {{ $trans->status_order === 'finished' ? 'selected' : '' }}>
                                 Finished</option>
                             <option value="out_of_delivery"
                                 {{ $trans->status_order === 'out_of_delivery' ? 'selected' : '' }}>Out for Delivery

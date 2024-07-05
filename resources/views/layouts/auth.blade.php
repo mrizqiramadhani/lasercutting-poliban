@@ -106,6 +106,8 @@
                            try {
                                console.log(response.data.id)
                                sessionStorage.setItem('jwt_token', response.data.token);
+
+                               sessionStorage.setItem('user_name', response.data.name);
                                sessionStorage.setItem('user_id', response.data.id);
                                // Check if role_id is present in decoded token data
                                if (response.data.role_name === 'admin') {

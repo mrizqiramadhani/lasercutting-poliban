@@ -49,7 +49,8 @@ class ProductController extends Controller
 
         try {
             $products = $this->product->getAll($filter, $itemPerPage, $sort);
-            // dd($products['data']->items());
+            $user = auth()->user();
+            // dd($user);
 
             if (request()->route()->named('admin.beranda-admin')) {
                 return view('admin.beranda-admin', compact('products'));

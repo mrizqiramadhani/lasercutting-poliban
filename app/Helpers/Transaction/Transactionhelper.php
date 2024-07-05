@@ -28,7 +28,10 @@ class TransactionHelper extends Custom
     {
         try {
 
-            $existingCartItem = $this->cartModel->where('product_id', $payload['product_id'])->first();
+            $existingCartItem = $this->cartModel
+            ->where('product_id', $payload['product_id'])
+            ->where('user_id', $payload['user_id'])
+            ->first();
 
                 if ($existingCartItem) {
                     return [

@@ -26,6 +26,9 @@
     {{-- link rel icon title --}}
     <link rel="icon" href="{!! asset('img/logo.jpg') !!}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     {{-- link rel css --}}
     <link rel="stylesheet" href="{{ asset('css/beranda.css') }}">
     <link rel="stylesheet" href="{{ asset('css/kontak.css') }}">

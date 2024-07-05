@@ -28,15 +28,15 @@
                             <div class="col-12">
                                 <ul id="progressbar" class="text-center">
                                     <li
-                                        class="{{ in_array($trans->status_order, ['waiting', 'order_place', 'in_transit', 'delivered']) ? 'active' : '' }} step0">
+                                        class="{{ in_array($trans->status_order, ['waiting', 'order_place', 'on_progress', 'finished']) ? 'active' : '' }} step0">
                                         Waiting</li>
                                     <li
-                                        class="{{ in_array($trans->status_order, ['order_place', 'in_transit', 'delivered']) ? 'active' : '' }} step0">
+                                        class="{{ in_array($trans->status_order, ['order_place', 'on_progress', 'finished']) ? 'active' : '' }} step0">
                                         Order Placed</li>
                                     <li
-                                        class="{{ in_array($trans->status_order, ['in_transit', 'delivered']) ? 'active' : '' }} step0">
+                                        class="{{ in_array($trans->status_order, ['on_progress', 'finished']) ? 'active' : '' }} step0">
                                         On Progress</li>
-                                    <li class="{{ $trans->status_order === 'delivered' ? 'active' : '' }} step0">
+                                    <li class="{{ $trans->status_order === 'finished' ? 'active' : '' }} step0">
                                         Finished</li>
                                 </ul>
                             </div>

@@ -34,6 +34,24 @@
         <link rel="stylesheet" href="{{ asset('css/beranda.css') }}">
         <link rel="stylesheet" href="{{ asset('css/admin/beranda.css') }}">
 
+        <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        {{-- link rel bootsrap icon --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        {{-- link rel footer --}}
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/font-size/font-size.css">
+        <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/padding/padding.css">
+
+        {{-- link rel icon title --}}
+        <link rel="icon" href="{!! asset('img/logo.jpg') !!}" />
+
+        {{-- link rel css --}}
+        <link rel="stylesheet" href="{{ asset('css/beranda.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/admin/beranda.css') }}">
+
     </head>
 
     <body>
@@ -104,49 +122,6 @@
                                 <p>No products found.</p>
                             @endif
                         </div>
-
-
-                        {{-- ccss --}}
-                        {{-- <div class="container">
-                                <h1 class="mb-5 text-center text-2xl font-bold">Cart Items</h1>
-                                <div class="row justify-content-center gx-5">
-                                    <div class="col-lg-8">
-                                        <div class="card mb-3">
-                                            <div class="row g-0">
-                                                <div class="col-md-4">
-                                                    <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                                        class="img-fluid rounded-start" alt="product-image">
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="card-body d-flex flex-column justify-content-between">
-                                                        <div>
-                                                            <h5 class="card-title">Nike Air Max 2019</h5>
-                                                            <p class="card-text text-muted">36EU - 4US</p>
-                                                        </div>
-                                                        <div class="d-flex justify-content-between align-items-center">
-
-                                                            <div class="d-flex align-items-center">
-                                                                <p class="mb-0 me-3">259.000 ₭</p>
-                                                                <button class="btn btn-outline-danger btn-sm">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                        viewBox="0 0 24 24" stroke-width="1.5"
-                                                                        stroke="currentColor"
-                                                                        style="width: 20px; height: 20px;">
-                                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                                            d="M6 18L18 6M6 6l12 12" />
-                                                                    </svg>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
-                        {{-- sadsd --}}
-
                     </div>
                 </div>
             </div>

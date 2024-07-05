@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a href="{{ route('beranda') }}"><img src="{{ asset('img/logo.jpg') }}" alt="laser cutting poliban"
+        <a href="{{ route('beranda.user') }}"><img src="{{ asset('img/logo.jpg') }}" alt="laser cutting poliban"
                 style="width:75px" class="me-3"></a>
-        <a class="navbar-brand" href="{{ route('beranda') }}">Laser Cutting Poliban</a>
+        <a class="navbar-brand" href="{{ route('beranda.user') }}">Laser Cutting Poliban</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
                 <li class="nav-item dropdown me-4">
                     <a class="nav-link dropdown-toggle btn btn-secondary @yield('user-classes')" href="#"
                         id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span id="user-name-dropdown"></span>
+                        <span id="user-name-nav"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="userDropdown">
                         <li> <a class="dropdown-item @yield('user-classes')" href="#"
@@ -79,9 +79,15 @@
 <script>
     function navigateToCart() {
         var id = sessionStorage.getItem('user_id');
+        var userName = sessionStorage.getItem('user_name');
         if (!id) {
             alert('ID not found in sessionStorage.');
             return;
+        }
+        // Update user-name-dropdown before navigation (if necessary)
+        if (userName) {
+            document.getElementById('user-name-nav').innerText = userName;
+            console.log('username', userName)
         }
         var url = "{{ route('get.cart') }}?user_id=" + id;
         window.location.href = url;
@@ -103,7 +109,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const userName = sessionStorage.getItem('user_name');
         if (userName) {
-            document.getElementById('user-name-dropdown').innerText = userName;
+            document.getElementById('user-name-nav').innerText = userName;
         } else {
             console.log('User name not found in sessionStorage');
             Swal.fire('Error', 'User name not found in sessionStorage', 'error');

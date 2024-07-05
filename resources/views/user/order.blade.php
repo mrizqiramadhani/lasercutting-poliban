@@ -62,7 +62,7 @@
                                                 <strong>Status Order:</strong> {{ $trans->status_order }} <br>
                                                 <strong>Payment At:</strong> {{ $trans->payment_at }} <br>
                                             </div>
-                                            <div class="ms-auto">
+                                            <div class="ms-auto me-4">
                                                 <button type="button" class="btn btn-primary edit-transaction"
                                                     data-transaction-id="{{ $trans->id }}" data-bs-toggle="modal"
                                                     data-bs-target="#Track{{ $trans->id }}">Track Order</button>

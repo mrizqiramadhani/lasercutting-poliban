@@ -40,7 +40,7 @@
         <div class="container" style="margin-top: 150px">
             <div class="container mt-3">
                 <div class="container marketing mt-5">
-                    <div id="articles-container" class="row">
+                    <div id="articles-container">
                         <h1 class="text-start mb-5">Keranjang User</h1>
                         <div class="row justify-content-start gx-5">
                             @if ($cart['status'] && count($cart['data']) > 0)

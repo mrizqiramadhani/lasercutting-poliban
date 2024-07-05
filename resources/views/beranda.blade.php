@@ -186,49 +186,48 @@
 
 
     <hr class="featurette-divider">
-    <div class="d-flex justify-content-center" style="margin-bottom: 70px">
+    <div class="d-flex justify-content-center mb-5">
         <h1>Kenapa memilih kami?</h1>
     </div>
-    <div>
+    <div class="container">
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
-                <div class="card text-center bg-dark shadow-lg" style="border-radius: 20px;">
-                    <img src="{{ asset('img/team.jpg') }}" class="mt-5 mb-3" alt="team_terbaik"
-                        style="width: 100px;display: block; margin: 0 auto;">
+                <div class="card text-center bg-dark shadow-lg h-100" style="border-radius: 20px; padding: 20px;">
+                    <img src="{{ asset('img/team.jpg') }}" class="mt-3 mb-3" alt="team_terbaik"
+                        style="width: 100px; display: block; margin: 0 auto;">
                     <div class="card-body">
-                        <h5 class="card-title text-white mb-2">Tim Terbaik</h5>
-                        <p class="card-text text-white">Tim yang yang bekerja cepat dan dapat di andalkan</p>
+                        <h5 class="card-title text-white mb-1">Tim Terbaik</h5>
+                        <p class="card-text text-white">Tim yang bekerja cepat dan dapat diandalkan.</p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card text-center bg-dark shadow-lg" style="border-radius: 20px;">
-                    <img src="{{ asset('img/price.jpg') }}" class="mt-5 mb-3" alt="team_terbaik"
-                        style="width: 100px;display: block; margin: 0 auto;">
+                <div class="card text-center bg-dark shadow-lg h-100" style="border-radius: 20px; padding: 20px;">
+                    <img src="{{ asset('img/price.jpg') }}" class="mt-3 mb-3" alt="harga_terjangkau"
+                        style="width: 100px; display: block; margin: 0 auto;">
                     <div class="card-body">
-                        <h5 class="card-title text-white mb-2">Harga Terjangkau</h5>
-                        <p class="card-text text-white">Harga yang pas di dompet untuk semua kalangan</p>
+                        <h5 class="card-title text-white mb-1">Harga Terjangkau</h5>
+                        <p class="card-text text-white">Harga yang pas di dompet untuk semua kalangan.</p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card text-center bg-dark shadow-lg" style="border-radius: 20px;">
-                    <img src="{{ asset('img/clock.jpg') }}" class="mt-5 mb-3" alt="team_terbaik"
-                        style="width: 100px;display: block; margin: 0 auto;">
+                <div class="card text-center bg-dark shadow-lg h-100" style="border-radius: 20px; padding: 20px;">
+                    <img src="{{ asset('img/clock.jpg') }}" class="mt-3 mb-3" alt="tepat_waktu"
+                        style="width: 100px; display: block; margin: 0 auto;">
                     <div class="card-body">
-                        <h5 class="card-title text-white mb-2">Tepat Waktu</h5>
-                        <p class="card-text text-white">Selalu berpatokan dengan waktu yang telah ditentukan
-                        </p>
+                        <h5 class="card-title text-white mb-1">Tepat Waktu</h5>
+                        <p class="card-text text-white">Selalu berpatokan dengan waktu yang telah ditentukan.</p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card text-center bg-dark shadow-lg" style="border-radius: 20px;">
-                    <img src="{{ asset('img/quality.jpg') }}" class="mt-5 mb-3" alt="team_terbaik"
-                        style="width: 100px;display: block; margin: 0 auto;">
+                <div class="card text-center bg-dark shadow-lg h-100" style="border-radius: 20px; padding: 20px;">
+                    <img src="{{ asset('img/quality.jpg') }}" class="mt-3 mb-3" alt="kualitas_terbaik"
+                        style="width: 100px; display: block; margin: 0 auto;">
                     <div class="card-body">
-                        <h5 class="card-title text-white mb-2">Kualitas Ganas</h5>
-                        <p class="card-text text-white">Berkualitas tanpa batas</p>
+                        <h5 class="card-title text-white mb-1">Kualitas Ganas</h5>
+                        <p class="card-text text-white">Berkualitas tanpa batas.</p>
                     </div>
                 </div>
             </div>
@@ -236,7 +235,7 @@
     </div>
 
 
-    </div><!-- /.container -->
+
 
 
 

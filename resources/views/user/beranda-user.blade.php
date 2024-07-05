@@ -49,15 +49,15 @@
             <div class="container mt-3">
 
                 <div class="container marketing mt-5">
-                    <div id="articles-container" class="row">
-                        <div class="row">
+                    <div>
+                        <div>
                             <h1 class="text-start mb-5">Selamat Datang User imuets</h1>
                             <div class="row grid gap-5">
                                 @if ($products['status'] && count($products['data']) > 0)
                                     @foreach ($products['data']->items() as $item)
                                         @if ($item->deleted_at == null)
                                             <div class="col-lg-3 col-md-4 col-sm-6 p-0">
-                                                <div class="card h-100 shadow-sm border-0"
+                                                <div class="card  shadow-sm border-0"
                                                     style="transition: box-shadow 0.3s ease-in-out; ">
                                                     <img src="{{ !empty($item->photo) ? Storage::disk('public')->url($item->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
                                                         class="card-img-top img-fluid" alt="{{ $item->name }}"

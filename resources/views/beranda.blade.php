@@ -102,7 +102,7 @@
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 1px;
         }
 
         .product-card {
@@ -115,7 +115,7 @@
         }
 
         .product-card img {
-            height: 150px;
+            height: 250px;
             object-fit: cover;
         }
 
@@ -156,8 +156,8 @@
                 <div class="row product-grid">
                     @if ($products['status'] && count($products['data']) > 0)
                         @foreach (array_slice($products['data']->items(), 0, 100) as $item)
-                            <div class="col p-0">
-                                <div class="card h-100 shadow-sm border-0 product-card">
+                            <div class="col p-5">
+                                <div class="card shadow-sm border-0 product-card">
                                     <img src="{{ !empty($item->photo) ? Storage::disk('public')->url($item->photo) : Storage::disk('public')->url('public/img/no-image.jpg') }}"
                                         class="card-img-top img-fluid" alt="{{ $item->name }}">
                                     <div class="card-body d-flex flex-column p-3">

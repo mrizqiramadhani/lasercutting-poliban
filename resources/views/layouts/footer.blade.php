@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-12 col-lg-3 col-xl-4">
                     <div class="widget">
-                        <h4 class="widget-title mb-4">Get in Touch</h4>
+                        <h4 class="widget-title mb-4">Hubungi Kami</h4>
                         <div class="col-xs-12 col-md-5 order-0 order-md-1">
                             <div class="social-media-wrapper">
                                 <ul class="list-unstyled m-0 p-0 d-flex">

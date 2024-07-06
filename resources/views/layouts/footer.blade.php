@@ -4,35 +4,38 @@
     <section class="bg-dark py-4 py-md-5 py-xl-8 border-top border-light">
         <div class=" overflow-hidden">
             <div class="row gy-4 gy-lg-0 justify-content-xl-between">
-                <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-                    <div class="widget">
+                <div class="col-12 col-md-4 col-lg-3 col-xl-2 ms-md-5">
+                    <div class="widget text-center text-md-start">
                         <a href="#!">
-                            <img src="{{ asset('img/logo.jpg') }}" alt="BootstrapBrain Logo" width="150px">
+                            <img src="{{ asset('img/logo.jpg') }}" alt="BootstrapBrain Logo" width="100px">
                         </a>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 col-lg-3 col-xl-2">
                     <div class="widget">
-                        <h4 class="widget-title mb-4">Abous Us</h4>
-                        <address class="mb-4">8014 Edith Blvd NE, Albuquerque, New York, United States</address>
+                        <h4 class="widget-title mb-4">Tentang Kami</h4>
+                        <address class="mb-4">Jl. Brig Jend. Hasan Basri, Pangeran, Kec. Banjarmasin Utara, Kota
+                            Banjarmasin, Kalimantan Selatan 70124</address>
                         <p class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="tel:+15057922430">(505) 792-2430</a>
+                            <a class="link-secondary text-decoration-none" href="https://wa.me/+6281348669955">+62
+                                81348669955</a>
                         </p>
                         <p class="mb-0">
                             <a class="link-secondary text-decoration-none"
-                                href="mailto:demo@yourdomain.com">demo@yourdomain.com</a>
+                                href="mailto:lasercuttingpoliban@gmail.com">lasercuttingpoliban@gmail.com</a>
                         </p>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 col-lg-3 col-xl-2">
                     <div class="widget">
-                        <h4 class="widget-title mb-4">Learn More</h4>
+                        <h4 class="widget-title mb-4">Pelajari lebih lanjut</h4>
                         <ul class="list-unstyled">
                             <li class="mb-2">
-                                <a href="#!" class="link-secondary text-decoration-none">About</a>
+                                <a href="{{ route('tentang-kami') }}"
+                                    class="link-secondary text-decoration-none">Tentang</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#!" class="link-secondary text-decoration-none">Contact</a>
+                                <a href="{{ route('kontak') }}" class="link-secondary text-decoration-none">Kontak</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#!" class="link-secondary text-decoration-none">Advertise</a>
@@ -80,7 +83,8 @@
                                         </a>
                                     </li>
                                     <li class="">
-                                        <a href="#!" class="link-light link-opacity-75-hover">
+                                        <a href="https://www.instagram.com/lasercutting.poliban?igsh=MXVoNWcxMDcxNGc3ZA=="
+                                            class="link-light link-opacity-75-hover">
                                             <svg xmlns="" width="24" height="24" fill="currentColor"
                                                 class="bi bi-instagram" viewBox="0 0 16 16">
                                                 <path

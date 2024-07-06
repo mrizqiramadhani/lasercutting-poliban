@@ -41,7 +41,7 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title mt-3">WhatsApp</h5>
-                <p class="card-text mb-4">+62 811-1921-2358</p>
+                <p class="card-text mb-4">+62 813-4866-9955</p>
                 <h5 class="card-title">Email</h5>
                 <p class="card-text mb-4">LasercuttingPoliban@gmail.com</p>
                 <h5 class="card-title">Address</h5>
@@ -79,7 +79,8 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="#!" class="link-dark link-opacity-75-hover">
+                            <a href="https://www.instagram.com/lasercutting.poliban?igsh=MXVoNWcxMDcxNGc3ZA=="
+                                class="link-dark link-opacity-75-hover">
                                 <svg xmlns="" width="24" height="24" fill="currentColor"
                                     class="bi bi-instagram" viewBox="0 0 16 16">
                                     <path

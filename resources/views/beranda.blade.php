@@ -52,8 +52,12 @@
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <h1>Laser Cutting Poliban</h1>
-                        <p>Laser Cutting Poliban adalah penyedia jasa laser cutting dan laser marking</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Ayo Pesan!</a></p>
+                        <p>Laser Cutting Poliban adalah penyedia jasa laser cutting dan laser marking. Kami siap
+                            membantu Anda dalam memenuhi kebutuhan pemotongan dan penandaan laser dengan kualitas
+                            terbaik.</p>
+                        <p><a class="btn btn-lg btn-primary"
+                                href="https://api.whatsapp.com/send?phone=+6281348669955&text=Halo%20saya%20tertarik%20dengan%20layanan%20Laser%20Cutting%20Poliban">Ayo
+                                Pesan!</a></p>
                     </div>
                 </div>
             </div>
@@ -62,10 +66,9 @@
                     height="800px" style="filter: brightness(30%)">
                 <div class="carousel-caption">
                     <h1>Laser Cutting Poliban</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugiat animi ut quos
-                        quam laboriosam? Expedita, architecto eligendi! Incidunt, saepe est laborum eligendi
-                        deleniti voluptatem a perspiciatis repellat atque dolorum.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                    <p>Laser Cutting Poliban menyediakan solusi pemotongan dan penandaan laser dengan presisi tinggi.
+                        Kami menghadirkan layanan terbaik untuk kebutuhan industri Anda.</p>
+                    <p><a class="btn btn-lg btn-primary" href="{{ route('kontak') }}">Pelajari lebih lanjut</a></p>
                 </div>
             </div>
             <div class="carousel-item">
@@ -73,13 +76,15 @@
                     height="100%" style="filter: brightness(30%)">
                 <div class="container">
                     <div class="carousel-caption text-end">
-                        <h1>One more for good measure.</h1>
-                        <p>Some representative placeholder content for the third slide of this carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                        <h1>Laser Cutting Poliban</h1>
+                        <p>Kunjungi galeri kami untuk melihat berbagai hasil kerja laser cutting yang telah kami
+                            produksi untuk pelanggan kami.</p>
+                        <p><a class="btn btn-lg btn-primary" href="{{ route('tentang-kami') }}">Telusuri galeri</a></p>
                     </div>
                 </div>
             </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>

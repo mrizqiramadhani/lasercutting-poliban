@@ -47,8 +47,8 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('img/beranda_1.jpg') }}" alt="laser cutting poliban" width="100%" height="100%"
-                    style="filter: brightness(30%)">
+                <img src="{{ asset('img/img-real/beranda_1.jpg') }}" alt="laser cutting poliban" width="100%"
+                    height="100%" style="filter: brightness(30%)">
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <h1>Laser Cutting Poliban</h1>
@@ -58,8 +58,8 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/beranda_3.jpg') }}" alt="laser cutting poliban" width="1800px" height="800px"
-                    style="filter: brightness(30%)">
+                <img src="{{ asset('img/img-real/beranda_2.jpg') }}" alt="laser cutting poliban" width="1800px"
+                    height="800px" style="filter: brightness(30%)">
                 <div class="carousel-caption">
                     <h1>Laser Cutting Poliban</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugiat animi ut quos
@@ -69,8 +69,8 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/beranda_2.jpg') }}" alt="laser cutting poliban" width="100%" height="100%"
-                    style="filter: brightness(30%)">
+                <img src="{{ asset('img/img-real/beranda_3.jpg') }}" alt="laser cutting poliban" width="100%"
+                    height="100%" style="filter: brightness(30%)">
                 <div class="container">
                     <div class="carousel-caption text-end">
                         <h1>One more for good measure.</h1>

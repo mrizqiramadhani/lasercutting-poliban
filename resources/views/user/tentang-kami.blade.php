@@ -38,22 +38,22 @@
     <div class="banner text-center text-white">
         <h1 class="display-5 fw-bold heading">Tentang Kami</h1>
         <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4 content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae quisquam
-                inventore minima placeat molestias fugit et labore earum animi veritatis, quibusdam in, ex iusto eaque
-                neque! Voluptatibus molestias voluptatum laborum.</p>
+            <p class="lead mb-4 content">Kami adalah perusahaan yang mengkhususkan diri dalam layanan pemotongan laser
+                berkualitas tinggi. Dengan teknologi terbaru dan tim profesional yang berpengalaman, kami siap memenuhi
+                kebutuhan pemotongan laser Anda dengan hasil yang presisi dan memuaskan.</p>
         </div>
     </div>
     <div class="container marketing" style="margin-top: 75px">
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your
-                        mind.</span></h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
+                <h2 class="featurette-heading">Layanan Pemotongan Laser Unggulan. <span class="text-muted">Menghasilkan
+                        hasil terbaik.</span></h2>
+                <p class="lead">Kami menyediakan layanan pemotongan laser untuk berbagai jenis material dengan presisi
+                    tinggi dan hasil yang memuaskan. Percayakan kebutuhan pemotongan Anda kepada kami.</p>
             </div>
             <div class="col-md-5">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" src="{{ asset('img/tentang-kami4.jpg') }}" alt="Tentang kami" />
+                    height="500" src="{{ asset('img/img-real/tentangkami_1.jpg') }}" alt="Tentang kami" />
             </div>
         </div>
 
@@ -61,14 +61,14 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                        yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea
-                    of how this layout would work with some actual real-world content in place.</p>
+                <h2 class="featurette-heading">Teknologi Terbaru. <span class="text-muted">Lihat sendiri
+                        kualitasnya.</span></h2>
+                <p class="lead">Dengan teknologi pemotongan laser terbaru, kami mampu memberikan hasil yang akurat dan
+                    efisien. Kualitas adalah prioritas utama kami dalam setiap proyek yang kami kerjakan.</p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" src="{{ asset('img/tentang-kami5.jpg') }}" alt="Tentang kami" />
+                    height="500" src="{{ asset('img/img-real/tentangkami_3.jpg') }}" alt="Tentang kami" />
             </div>
         </div>
     </div>

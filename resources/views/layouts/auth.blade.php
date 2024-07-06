@@ -29,7 +29,8 @@
                        <button type="submit" class="btn btn-primary w-100">Login</button>
                        <div class="text-center mt-3">
                            Belum punya akun? <a href="#" class="text-decoration-none text-muted"
-                               data-bs-toggle="modal" data-bs-target="#exampleModal2">Buat Akun</a>
+                               style="color: blue !important;" data-bs-toggle="modal"
+                               data-bs-target="#exampleModal2">Buat Akun</a>
                        </div>
                    </form>
                </div>

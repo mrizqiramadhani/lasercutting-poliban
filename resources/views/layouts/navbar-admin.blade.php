@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a href="{{ route('beranda') }}"><img src="{{ asset('img/logo.jpg') }}" alt="laser cutting poliban"
+        <a href="{{ route('admin.beranda-admin') }}"><img src="{{ asset('img/logo.jpg') }}" alt="laser cutting poliban"
                 style="width:75px" class="me-3"></a>
-        <a class="navbar-brand" href="{{ route('beranda') }}">Laser Cutting Poliban</a>
+        <a class="navbar-brand" href="{{ route('admin.beranda-admin') }}">Laser Cutting Poliban</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -42,19 +42,20 @@
         <div class="container" style="margin-top: 50px">
             <div class="container mt-3">
                 <div class="container marketing mt-5">
-                    <div id="transactions-container" class="row">
+                    <div id="transactions-container">
                         <div class="row">
                             <h1 class="text-start mb-5 mt-5">Selamat Datang <span id="user-name-dropdown"></span></h1>
                             @if ($transaction['status'] && count($transaction['data']) > 0)
-                                <ul class="list-group">
+                                <ul>
                                     @foreach ($transaction['data']->items() as $trans)
-                                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                                            <div class="me-3">
+                                        <li
+                                            class="list-group-item d-flex flex-column flex-md-row justify-content-start align-items-center">
+                                            <div class="me-3 mb-3 mb-md-0">
                                                 <img src="{{ !empty($trans->photo_receipt) ? Storage::disk('public')->url($trans->photo_receipt) : Storage::disk('public')->url('../assets/img/no_image.jpg') }}"
                                                     class="img-fluid" alt=""
                                                     style="max-width: 5rem; max-height: 5rem;">
                                             </div>
-                                            <div>
+                                            <div class="flex-grow-1">
                                                 <strong>Invoice:</strong> {{ $trans->Invoice }} <br>
                                                 <strong>User:</strong> {{ $trans->users->name ?? '-' }} <br>
                                                 <strong>Total:</strong> Rp {{ number_format($trans->total, 2, ',', '.') }}
@@ -62,7 +63,7 @@
                                                 <strong>Status Order:</strong> {{ $trans->status_order }} <br>
                                                 <strong>Payment At:</strong> {{ $trans->payment_at }} <br>
                                             </div>
-                                            <div class="ms-auto me-4">
+                                            <div class="mt-3 mt-md-0 ms-md-auto">
                                                 <button type="button" class="btn btn-primary edit-transaction"
                                                     data-transaction-id="{{ $trans->id }}" data-bs-toggle="modal"
                                                     data-bs-target="#Track{{ $trans->id }}">Track Order</button>
@@ -74,6 +75,7 @@
                             @else
                                 <p>No transactions found.</p>
                             @endif
+
                         </div>
                     </div>
                 </div>

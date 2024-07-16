@@ -145,8 +145,8 @@
                                 Swal.fire('Success', 'Product added to cart successfully',
                                     'success');
                             } else {
-                                Swal.fire('Error', data.message ||
-                                    'Failed to add product to cart', 'error');
+                                Swal.fire('Gagal', data.message ||
+                                    'Product sudah ada di dalam keranjang', 'error');
                             }
                         })
                         .catch(error => {

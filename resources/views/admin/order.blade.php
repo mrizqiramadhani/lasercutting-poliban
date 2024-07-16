@@ -38,45 +38,43 @@
     </head>
 
     <body>
-        <div class="container" style="margin-top: 150px">
-            <div class="container mt-3">
-                <div class="container marketing mt-5">
-                    <div id="transactions-container" class="row">
-                        <div class="row">
-                            <h1 class="text-center mb-5">Selamat Datang Admin <span id="user-name-dropdown"></span></h1>
-                            @if ($transaction['status'] && count($transaction['data']) > 0)
-                                <ul class="list-group">
-                                    @foreach ($transaction['data']->items() as $trans)
-                                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                                            <div class="me-3">
-                                                <img src="{{ Storage::disk('public')->url($trans->photo_receipt) }}"
-                                                    class="img-fluid" alt="Receipt"
-                                                    style="max-width: 10rem; max-height: 10rem;">
-                                            </div>
-                                            <div>
-                                                <strong>Invoice:</strong> {{ $trans->Invoice }} <br>
-                                                <strong>User:</strong> {{ $trans->users->name ?? '-' }} <br>
-                                                <strong>Total:</strong>Rp {{ number_format($trans->total, 2, ',', '.') }}
-                                                <br>
-                                                <strong>Status Order:</strong> {{ $trans->status_order }} <br>
-                                                <strong>Payment At:</strong> {{ $trans->payment_at }} <br>
-                                            </div>
-                                            <div class="ms-auto">
-                                                <button type="button" class="btn btn-primary edit-transaction"
-                                                    data-transaction-id="{{ $trans->id }}" data-bs-toggle="modal"
-                                                    data-bs-target="#updateModal{{ $trans->id }}">Update Status</button>
-                                        </li>
-                                        @include('admin.update-transaksi', ['trans' => $trans])
-                                    @endforeach
-                                </ul>
-                            @else
-                                <p>No transactions found.</p>
-                            @endif
-                        </div>
-                    </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center mb-5">Selamat Datang Admin <span id="user-name-dropdown"></span></h1>
+                    @if ($transaction['status'] && count($transaction['data']) > 0)
+                        <ul class="list-group">
+                            @foreach ($transaction['data']->items() as $trans)
+                                <li
+                                    class="list-group-item d-flex flex-column flex-md-row align-items-center align-items-md-center justify-content-between">
+                                    <div class="d-flex flex-column flex-md-row align-items-center align-items-md-center">
+                                        <img src="{{ Storage::disk('public')->url($trans->photo_receipt) }}"
+                                            class="img-fluid me-md-3 mb-3 mb-md-0" alt="Receipt"
+                                            style="max-width: 10rem; max-height: 10rem;">
+                                        <div>
+                                            <strong>Invoice:</strong> {{ $trans->Invoice }} <br>
+                                            <strong>User:</strong> {{ $trans->users->name ?? '-' }} <br>
+                                            <strong>Total:</strong> Rp {{ number_format($trans->total, 2, ',', '.') }} <br>
+                                            <strong>Status Order:</strong> {{ $trans->status_order }} <br>
+                                            <strong>Payment At:</strong> {{ $trans->payment_at }} <br>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 mt-md-0">
+                                        <button type="button" class="btn btn-primary edit-transaction"
+                                            data-transaction-id="{{ $trans->id }}" data-bs-toggle="modal"
+                                            data-bs-target="#updateModal{{ $trans->id }}">Update Status</button>
+                                    </div>
+                                </li>
+                                @include('admin.update-transaksi', ['trans' => $trans])
+                            @endforeach
+                        </ul>
+                    @else
+                        <p>No transactions found.</p>
+                    @endif
                 </div>
             </div>
         </div>
+
     </body>
 
     {{-- js bootstrap --}}

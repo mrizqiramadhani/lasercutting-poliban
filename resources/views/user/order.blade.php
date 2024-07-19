@@ -61,7 +61,7 @@
                                                 <strong>Total:</strong> Rp {{ number_format($trans->total, 2, ',', '.') }}
                                                 <br>
                                                 <strong>Status Order:</strong> {{ $trans->status_order }} <br>
-                                                <strong>Payment At:</strong> {{ $trans->payment_at }} <br>
+                                                <strong>Order at:</strong> {{ $trans->payment_at }} <br>
                                             </div>
                                             <div class="mt-3 mt-md-0 ms-md-auto">
                                                 <button type="button" class="btn btn-primary edit-transaction"

@@ -127,7 +127,7 @@ class TransactionController extends Controller
             'name' => $request->input('name', ''),
         ];
         $itemPerPage = 100;
-        $sort = $request->input('sort', 'id DESC');
+        $sort = $request->input('sort', 'created_at DESC');
 
 
         try {
@@ -146,7 +146,7 @@ class TransactionController extends Controller
             'user_id' => $request->user_id ?? '',
         ];
         $itemPerPage = 100;
-        $sort = $request->input('sort', 'id DESC');
+        $sort = $request->input('sort', 'created_at DESC');
 
 
         try {

@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Helpers\Transaction\TransactionHelper;
+use App\Helpers\Transaction\Transactionhelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Transaction\CartRequest;
 use App\Http\Requests\Transaction\TransactionRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TransactionController extends Controller
 {
     private $transaction;
     public function __construct()
     {
-        $this->transaction = new TransactionHelper();
+        $this->transaction = new Transactionhelper();
     }
 
     public function deleteCart($id)
@@ -83,8 +84,10 @@ class TransactionController extends Controller
         if (isset($payload['cart'])) {
             $payload['cart'] = json_decode($payload['cart'], true);
         }
-
-
+         // Tambahkan log untuk melihat payload
+        Log::info('Payload:', $payload);
+         // Debug payload dengan mematikan aplikasi
+        // dd($payload);
         $transaction = $this->transaction->payment($payload);
 
 
@@ -94,7 +97,7 @@ class TransactionController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Product Berhasil Ditambahkan',
+            'message' => 'Product Berhasil Dipesan',
             'data' => $transaction['data']
         ], 200);
     }

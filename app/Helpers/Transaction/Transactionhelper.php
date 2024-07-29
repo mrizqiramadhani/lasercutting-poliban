@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Throwable;
 use Ramsey\Uuid\Uuid as Generator;
 
-class TransactionHelper extends Custom
+class Transactionhelper extends Custom
 {
     const PAYMENT_PHOTO_DIRECTORY = 'payment-img';
     private $cartModel;
@@ -84,14 +84,20 @@ class TransactionHelper extends Custom
             DB::beginTransaction();
 
             $payload = $this->uploadGetPayload($payload);
-
+            // Tambahkan dd untuk melihat payload
+            //   dd($payload);
             if (empty($payload['cart'])) {
                 return [
                     'status' => false,
                     'error' => 'No cart provided',
                 ];
             }
-
+            // if (!isset($payload['cart'][0])) {
+            //     return [
+            //         'status' => false,
+            //         'error' => 'Invalid cart format',
+            //     ];
+            // }
 
             $firstCart = $this->cartModel->with('user')->find($payload['cart'][0]['id']);
             if (!$firstCart) {

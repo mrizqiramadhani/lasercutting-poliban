@@ -5,7 +5,7 @@ namespace App\Http\Requests\Transaction;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use ProtoneMedia\LaravelMixins\Request\ConvertsBase64ToFiles;
-
+use Illuminate\Support\Facades\Log;
 class TransactionRequest extends FormRequest
 {
     public $validator;
@@ -33,6 +33,7 @@ class TransactionRequest extends FormRequest
     }
     public function store(): array
     {
+        // Log::debug('Request data:', $this->all());
         return [
             'status_order' => 'required|in:waiting,order_place,on_progress,out_of_delivery,finished|max:100',
             'photo_receipt' => 'required|file|image',
